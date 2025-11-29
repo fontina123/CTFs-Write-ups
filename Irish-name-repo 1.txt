@@ -1,0 +1,8 @@
+We can solve this CTF with some basic SQL Injection.
+
+In the login query, enter [admin' --] into the username section (seeing as we want to log in as the admin). The '-- part will comment out the final part of the query, bypassing the password check.
+
+===================================================
+
+Flag: picoCTF{s0m3_SQL_85832275}
+

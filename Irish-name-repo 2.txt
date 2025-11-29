@@ -1,0 +1,13 @@
+This time, inspecting the Admin Login site, we will see a hidden tag looking something like this:
+
+[<input type="hidden" name="debug" value="1">]
+
+
+Set [value="0"]. This will help make the CTF easier (although it won't be necessary).
+The previous trick we did would work with the [admin' --]
+
+Just make sure not to use the 'or 1=1;-- injection, the website is filtering the password.
+
+===================================================
+
+Flag: picoCTF{m0R3_SQL_plz_8c334129}

@@ -1,0 +1,22 @@
+Do the same thing last time with the hidden field
+
+[<input type="hidden" name="debug" value="1">]
+
+Change [value="0"], we will need it this time.
+
+This time around, there is no username field, meaning we cannot use the [admin' --] to comment out the password.
+We will have to rely on the ['or 1=1;--] payload.
+
+When we first input the payload, it will not work. If the hidden field is set to 0, the top will display something like this:
+
+password: 'or 1=1; --
+SQL query: SELECT * FROM admin where password = ''be 1=1; --'
+
+Notice how or is turned into be? That's a clue that the password is encrypted somehow, and that is through ROT13 (rotating 13 letters).
+
+Simply run your payload through your ROT13 encryptor of choice, or simply copy the ['be 1=1;--] (because they'll end up being the same) 
+and input them into the field.
+
+===================================================
+
+Flag = picoCTF{3v3n_m0r3_SQL_2af58a67}
